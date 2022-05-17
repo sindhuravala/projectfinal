@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <div class="nav container">
+            <a href="home" class="logo">Shop More</a>
+            <a href="cart"><i class='bx bxs-shopping-bag-alt' id="cart-icon"></i></a>
+        </div>
+    </header>
+    <section class="shop container">
+        <h2 class="section-title">Products</div>
+            <br>
+            <div class="shop-content">
+                <% data.forEach(function(Product){ %>
+                <div class="product-box">
+                    <img src="<%= Product.img %>" alt="" class="product">
+                    <h2 class="product-title"> <%= Product.product_name %></h2>
+                    <span class="price">$<%= Product.price %></span>
+                    <a href="/cart/<%= Product.product_id %>"><i class='bx bxs-shopping-bag add-cart'></i></a>
+                </div>
+                <% }) %>
+            </div>
+    </section>
+    <script src="js/javascript.js"></script>
+</body>
+</html>

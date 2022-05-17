@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce website</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <header>
+        <div class="nav container">
+            <a href="home" class="logo">Shop More</a>
+            <a href="products">Products</a>
+            <!-- <div class="cart">
+                <h2 class="cart_title">Your cart</h2>
+                <div class="cart-content">
+
+                    <div class="cart-box">
+                        <img src="images/P2.jpg" alt="" class="cart-img">
+                        <div class="detail-boc">
+                            <div class="cart-product-title">Olive top</div>
+                            <div class="cart-price">$30</div>
+                            <input type="number" value="1" class="cart-quantity">
+                        </div>
+                        <i class='bx bxs-trash cart-remove'></i>
+                    </div>
+                </div>
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">$0</div>
+                </div>
+                <button type="button" class="btn-buy">purchase now</button>
+                <i class='bx bx-x' id="close-cart"></i>
+
+           
+            </div> -->
+        </div>
+    </header>
+    <section class="shop container">
+        <h2 class="section-title">Your Cart</div>
+            <br>
+            <div class="shop-content">
+                <% var total = 0 %>
+                <% data.forEach(function(Product){ %>
+                <div class="product-box">
+                    <img src="<%= Product.img %>" alt="" class="product">
+                    <h2 class="product-title"> <%= Product.product_name %></h2>
+                    <span class="price">$<%= Product.price %></span>
+                    <% total = total + Product.price %>
+                    <a href="/cartdel/<%= Product.product_id %>"><i class='bx bxs-trash cart-remove'></i></a>
+                </div>
+                <% }) %>
+            </div>
+            <div class="total">
+                <div class="total-title">Total</div>
+                <div class="total-price">$<%= total %></div>
+            </div>
+    </section>
+    <script src="js/javascript.js"></script>
+    
+</body>
+</html>
